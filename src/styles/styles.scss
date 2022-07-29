@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$primary:#FB9D12;
+$secondary:#777;
+
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+}
+
+@import "./navbar.scss";
+@import "./home.scss";
