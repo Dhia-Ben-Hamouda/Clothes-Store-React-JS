@@ -91,6 +91,9 @@ const Home = () => {
               <button>See products</button>
             </div>
           </div>
+          <a href="/allProducts">
+            See All products
+          </a>
       </section>
     </section>
   )
