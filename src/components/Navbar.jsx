@@ -6,9 +6,14 @@ import { useState } from "react";
 const Navbar = () => {
   const [search, setSearch] = useState("");
 
+  function clickHandler()
+  {
+    window.location.href = "/"
+  }
+
   return (
     <nav>
-      <div className="logo">
+      <div className="logo" onClick={clickHandler}>
         <img src={logo} alt="" />
         <h1>Clothes Store</h1>
       </div>
@@ -22,10 +27,10 @@ const Navbar = () => {
           />
         </div>
         <div>
-          <a href="#">
+          <a href="/auth">
             <FaUser className="icon" />
           </a>
-          <a href="#">
+          <a href="/cart">
             <FaShoppingCart className="icon cart" />
           </a>
           <div className="count">
