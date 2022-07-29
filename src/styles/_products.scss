@@ -1,3 +1,80 @@
 #products{
   padding-inline:8vw;
+  padding-bottom:2rem;
+
+  .carousel{
+    width:100%;
+    background:$primary;
+    height:400px;
+    margin-top:1rem;
+  }
+
+  .container{
+    margin-top:1rem;
+    display: flex;
+    gap:1rem;
+
+    .filter-container{
+      background:white;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.14);
+      width:30%;
+
+      .header{
+        background:$primary;
+        color: white;
+        padding:1rem;
+      }
+    }
+
+    .product-container{
+      width:70%;
+      display: grid;
+      grid-template-columns: repeat(3 , auto);
+      gap:1rem;
+
+      .item{
+        background:white;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.14);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button{
+          width:80%;
+          margin:1rem 0px;
+          border:none;
+          outline:none;
+          background:$primary;
+          color: white;
+          padding:.7rem 1.6rem;
+          cursor: pointer;
+          transition: .5s;
+        
+          &:hover{
+            transform: scale(1.05);
+          }
+        }
+
+        
+
+        img{
+          width:100%;
+        }
+
+        div{
+          display: flex;
+          justify-content: space-between;
+          width:80%;
+
+          h3{
+            color:$secondary;
+          }
+        }
+      }
+    }
+
+
+  }
 }
