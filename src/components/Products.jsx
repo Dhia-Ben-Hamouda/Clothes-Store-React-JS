@@ -25,7 +25,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>
@@ -33,7 +33,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>
@@ -41,7 +41,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>
@@ -49,7 +49,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>
@@ -57,7 +57,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>
@@ -65,7 +65,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>
@@ -73,7 +73,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>
@@ -81,7 +81,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>
@@ -89,7 +89,7 @@ const Products = ()=>{
               <img src={test} alt="" />
               <div>
                 <h3>name</h3>
-                <h3>200</h3>
+                <h3>200 $</h3>
               </div>
               <button>Add to Cart</button>
             </div>

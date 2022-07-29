@@ -60,6 +60,11 @@
           padding:.7rem 1rem;
           margin:1rem 0px;
           cursor:pointer;
+          transition: .5s;
+
+          &:hover{
+            transform: scale(1.08);
+          }
         }
       }
 
