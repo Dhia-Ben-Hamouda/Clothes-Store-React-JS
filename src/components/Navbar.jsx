@@ -1,17 +1,15 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import { FaSearch , FaUser , FaShoppingCart } from "react-icons/fa";
+import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
 
-const Navbar = ()=>{
-  const [search , setSearch ] = useState("");
+const Navbar = () => {
+  const [search, setSearch] = useState("");
 
-  return(
+  return (
     <nav>
       <div className="logo">
-        <div className="img">
-          <img src={logo} alt="" />
-        </div>
+        <img src={logo} alt="" />
         <h1>Clothes Store</h1>
       </div>
       <div className="container">
@@ -20,15 +18,15 @@ const Navbar = ()=>{
           <input
             placeholder="Search for products"
             value={search}
-            onChange={(e)=>{setSearch(e.target.value)}}
+            onChange={(e) => { setSearch(e.target.value) }}
           />
         </div>
         <div>
           <a href="#">
-            <FaUser className="icon"/>
+            <FaUser className="icon" />
           </a>
           <a href="#">
-            <FaShoppingCart className="icon cart"/> 
+            <FaShoppingCart className="icon cart" />
           </a>
           <div className="count">
             0
