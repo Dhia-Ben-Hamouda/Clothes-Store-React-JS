@@ -4,20 +4,61 @@ import Carousel from "./Carousel.jsx";
 import test from "../assets/test.png";
 import Pagination from "./Pagination.jsx";
 import { useState } from "react";
+import { Slider } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const Products = ()=>{
-  const [page , setPage] = useState(2);
-  const [pages , setPages] = useState(7);
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#FB9D12"
+    }
+  }
+})
 
-  return(
+const Products = () => {
+  const [page, setPage] = useState(2);
+  const [pages, setPages] = useState(7);
+  const [priceRange, setPriceRange] = useState([0, 500]);
+
+  return (
     <>
       <section id="products">
-        <Navbar/>
-        <Carousel/>
+        <Navbar />
+        <Carousel />
         <div className="container">
           <div className="filter-container">
             <div className="header">
               Filter by
+            </div>
+            <div className="price">
+              <h1>Price</h1>
+              <div className="slider">
+                <ThemeProvider theme={theme}>
+                  <Slider
+                    value={priceRange}
+                    valueLabelDisplay="auto"
+                    min={0}
+                    max={500}
+                    step={20}
+                    onChange={(e, newValue) => { setPriceRange(newValue); console.log(newValue) }}
+                  />
+                </ThemeProvider>
+              </div>
+              <div className="price-inputs">
+                <div className="low">
+                  {
+                    priceRange[0] + " $"
+                  }
+                </div>
+                <div className="high">
+                  {
+                    priceRange[1] + " $"
+                  }
+                </div>
+              </div>
+            </div>
+            <div className="gender">
+              <h1>Gender</h1>
             </div>
           </div>
           <div className="product-container">
@@ -96,11 +137,11 @@ const Products = ()=>{
           </div>
         </div>
         <div className="pagination">
-            <Pagination
-              page={page}
-              setPage={setPage}
-              pages={pages}
-            />
+          <Pagination
+            page={page}
+            setPage={setPage}
+            pages={pages}
+          />
         </div>
       </section>
     </>

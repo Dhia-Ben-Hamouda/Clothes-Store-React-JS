@@ -15,6 +15,26 @@
     align-items: center;
     width:400px;
 
+    .icons{
+      display: flex;
+      margin-top:.5rem;
+
+      .icon{
+        margin:.25rem;
+        padding:.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+
+        & > *{
+          width:1.5rem;
+          height:1.5rem;
+          color:white;
+        }
+      }
+    }
+
     .input{
       width:95%;
       margin-bottom:1rem;
@@ -71,7 +91,7 @@
       font-weight: 600;
 
       &:hover{
-        transform: scale(1.08);
+        transform: scale(1.03);
       }
     }
       

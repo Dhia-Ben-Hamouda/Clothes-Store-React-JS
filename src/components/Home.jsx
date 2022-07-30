@@ -14,87 +14,13 @@ const Home = () => {
             <h2>experience the luxury of buying high
               quality clothes from home with low
               prices and fast shipping !</h2>
-            <a href="#featured">Get Started</a>
+            <a href="/allProducts">Get Started</a>
           </div>
           <div className="illustration">
             <img src={shirt} alt="" />
           </div>
         </div>
       </div>
-      <section id="featured">
-        <div className="header">
-          <h1>Featured Products</h1>
-        </div>
-        <div className="grid">
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>See products</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>See products</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>See products</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>See products</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>See products</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>See products</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>See products</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>See products</button>
-            </div>
-          </div>
-          <a href="/allProducts">
-            See All products
-          </a>
-      </section>
     </section>
   )
 }

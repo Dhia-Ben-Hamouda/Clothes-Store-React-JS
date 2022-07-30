@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { TextField } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { FaFacebook , FaGoogle , FaTwitter } from "react-icons/fa";
-import { IconContext } from "react-icons";
+import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 
 const theme = createTheme({
   palette: {
@@ -108,17 +107,24 @@ const Auth = () => {
             {
               signIn ? <>
                 <h3>
-                Don't have an account ? <span  onClick={()=>{setSignIn(!signIn)}}>Sign up</span>
-              </h3> 
-              <h4>or Sign in with</h4>
-              </>
-              : <h3>Already have an account <span  onClick={()=>{setSignIn(!signIn)}}>Sign in</span></h3>
-            }
-
-            <div className="icons">
-              
+                  Don't have an account ? <span onClick={() => { setSignIn(!signIn) }}>Sign up</span>
+                </h3>
+                <h4>or Sign in with</h4>
+                <div className="icons">
+              <div className="icon" style={{background:"#405498"}}>
+                <FaFacebookF />
+              </div>
+              <div className="icon" style={{background:"#359BF1"}}>
+                <FaTwitter />
+              </div>
+              <div className="icon" style={{background:"#E74639"}}>
+                <FaGoogle />
+              </div>
             </div>
-
+              </>
+                : <h3>Already have an account <span onClick={() => { setSignIn(!signIn) }}>Sign in</span></h3>
+            }
+            
           </form>
         </ThemeProvider>
       </section>
