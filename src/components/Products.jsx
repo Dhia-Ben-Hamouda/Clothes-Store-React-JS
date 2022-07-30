@@ -27,7 +27,7 @@ const Products = () => {
         <Navbar />
         <Carousel />
         <ThemeProvider theme={theme}>
-          <div className="container">
+          <div className="wrapper">
             <div className="filter-container">
               <div className="header">
                 Filter by

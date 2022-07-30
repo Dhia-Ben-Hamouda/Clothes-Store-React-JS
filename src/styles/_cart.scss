@@ -1,3 +1,121 @@
 #cart{
   padding-inline:8vw;
+
+  .cart-container{
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap:1rem;
+
+    .products{
+      width:70%;
+
+      .product{
+        background:white;
+        display: flex;
+        align-items: center;
+        padding:2rem 1rem;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.14);
+        margin-bottom: 1rem;
+
+        .left{
+          width:40%;
+          display: flex;
+          align-items:center;
+          justify-content: space-around;
+
+          h1{
+            font-size: 18px;
+            font-weight: 500;
+            color:$secondary;
+          }
+
+          img{
+            width:50%;
+          }
+        }
+
+        .right{
+          width:60%;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          h1{
+            font-size: 18px;
+            color:$secondary;
+            font-weight: 500;
+          }
+
+          .icon{
+            width:1.5rem;
+            height:1.5rem;
+            color: $primary;
+            cursor: pointer;
+          }
+
+          .quantity{
+            display: flex;
+            align-items: center;
+
+            .count{
+              margin-inline:1.25rem;
+              font-size: 18px;
+              font-weight: 600;
+              color: $secondary;
+            }
+
+            div:not(.count){
+              cursor: pointer;
+              font-size: 18px;
+              background: $primary;
+              width:25px;
+              height:25px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              color: white;
+            }
+          }
+        }
+
+        
+      }
+    }
+
+    .checkout{
+      width:30%;
+      background:white;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 5px 0px rgba(0, 0, 0, 0.14);
+      padding:1.5rem 2rem;
+
+      h1 , h3{
+        color:$secondary;
+        margin-bottom: .5rem;
+      }
+
+      h3{
+        font-weight: 500;
+      }
+
+      button{
+        background:$primary;
+        border:none;
+        outline:none;
+        padding:.6rem 1rem;
+        color: white;
+        cursor: pointer;
+        transition: .5s;
+        margin-top:.15rem;
+
+        &:hover{
+          transform: scale(1.08);
+        }
+      }
+
+    }
+  }
 }
