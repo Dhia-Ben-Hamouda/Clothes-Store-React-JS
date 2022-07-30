@@ -72,6 +72,56 @@ const Products = () => {
                   />
                 </FormGroup>
               </div>
+              <div className="size">
+                <h1>Size</h1>
+                <FormGroup>
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="S"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="M"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="L"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="XL"
+                  />
+                </FormGroup>
+              </div>
+              <div className="color">
+                <h1>Color</h1>
+                <FormGroup>
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="Black"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="White"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="Red"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="Blue"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="Yellow"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox/>}
+                    label="Green"
+                  />
+                </FormGroup>
+              </div>
             </div>
             <div className="product-container">
               <div className="item">
