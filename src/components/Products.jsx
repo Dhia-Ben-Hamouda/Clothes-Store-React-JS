@@ -4,8 +4,9 @@ import Carousel from "./Carousel.jsx";
 import test from "../assets/test.png";
 import Pagination from "./Pagination.jsx";
 import { useState } from "react";
-import { Slider } from "@mui/material";
+import { Slider, FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 const theme = createTheme({
   palette: {
@@ -25,15 +26,16 @@ const Products = () => {
       <section id="products">
         <Navbar />
         <Carousel />
-        <div className="container">
-          <div className="filter-container">
-            <div className="header">
-              Filter by
-            </div>
-            <div className="price">
-              <h1>Price</h1>
-              <div className="slider">
-                <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+          <div className="container">
+            <div className="filter-container">
+              <div className="header">
+                Filter by
+              </div>
+              <div className="price">
+                <h1>Price</h1>
+                <div className="slider">
+
                   <Slider
                     value={priceRange}
                     valueLabelDisplay="auto"
@@ -42,108 +44,120 @@ const Products = () => {
                     step={20}
                     onChange={(e, newValue) => { setPriceRange(newValue); console.log(newValue) }}
                   />
-                </ThemeProvider>
+
+                </div>
+                <div className="price-inputs">
+                  <div className="low">
+                    {
+                      priceRange[0] + " $"
+                    }
+                  </div>
+                  <div className="high">
+                    {
+                      priceRange[1] + " $"
+                    }
+                  </div>
+                </div>
               </div>
-              <div className="price-inputs">
-                <div className="low">
-                  {
-                    priceRange[0] + " $"
-                  }
-                </div>
-                <div className="high">
-                  {
-                    priceRange[1] + " $"
-                  }
-                </div>
+              <div className="gender">
+                <h1>Gender</h1>
+                <FormGroup>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label="Male"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label="Female"
+                  />
+                </FormGroup>
               </div>
             </div>
-            <div className="gender">
-              <h1>Gender</h1>
+            <div className="product-container">
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
+              <div className="item">
+                <img src={test} alt="" />
+                <div>
+                  <h3>name</h3>
+                  <h3>200 $</h3>
+                </div>
+                <button>Add to Cart</button>
+              </div>
             </div>
           </div>
-          <div className="product-container">
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
-            <div className="item">
-              <img src={test} alt="" />
-              <div>
-                <h3>name</h3>
-                <h3>200 $</h3>
-              </div>
-              <button>Add to Cart</button>
-            </div>
+          <div className="pagination">
+            <Pagination
+              page={page}
+              setPage={setPage}
+              pages={pages}
+            />
           </div>
-        </div>
-        <div className="pagination">
-          <Pagination
-            page={page}
-            setPage={setPage}
-            pages={pages}
-          />
-        </div>
+        </ThemeProvider>
       </section>
+
     </>
   )
 }

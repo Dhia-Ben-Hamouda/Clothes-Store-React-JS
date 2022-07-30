@@ -32,6 +32,12 @@
       outline:none;
       border-radius: 5px;
       cursor:pointer;
+      transition: .5s;
+
+      &:hover{
+        background: $primary;
+
+      }
     }
 
     .active{
@@ -57,10 +63,21 @@
         padding:1rem;
       }
 
-      .price{
+      .gender{
         padding-inline:1rem;
 
-        
+        div{
+          margin-left:.75rem;
+        }
+
+        h1{
+          margin:.75rem 0px;
+          color:$secondary;
+        }
+      }
+
+      .price{
+        padding-inline:1rem;
 
         .price-inputs{
           display: flex;
