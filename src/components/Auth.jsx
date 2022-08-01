@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { TextField } from "@mui/material";
+import { TextField , FormControlLabel , checkbox } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 
@@ -98,6 +98,9 @@ const Auth = () => {
               type="password"
               className="input"
             />
+            {
+              signIn && <a href="/">Forgot password ?</a>
+            }
             <button type="submit">
               {
                 signIn ? "Sign in" : "Sign up"

@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "./Navbar.jsx";
 import Carousel from "./Carousel.jsx";
-import test from "../assets/test.png";
 import Pagination from "./Pagination.jsx";
 import { useState } from "react";
 import { Slider, FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useEffect } from "react";
 
 
 const theme = createTheme({
@@ -20,6 +20,21 @@ const Products = () => {
   const [page, setPage] = useState(2);
   const [pages, setPages] = useState(7);
   const [priceRange, setPriceRange] = useState([0, 500]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("http://localhost:5000/products/getAllProducts");
+      const data = await response.json();
+
+      console.log(data);
+
+      setProducts(data);
+
+      console.log(products);
+    }
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -76,19 +91,19 @@ const Products = () => {
                 <h1>Size</h1>
                 <FormGroup>
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="S"
                   />
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="M"
                   />
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="L"
                   />
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="XL"
                   />
                 </FormGroup>
@@ -97,105 +112,49 @@ const Products = () => {
                 <h1>Color</h1>
                 <FormGroup>
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="Black"
                   />
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="White"
                   />
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="Red"
                   />
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="Blue"
                   />
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="Yellow"
                   />
                   <FormControlLabel
-                    control={<Checkbox/>}
+                    control={<Checkbox />}
                     label="Green"
                   />
                 </FormGroup>
               </div>
             </div>
             <div className="product-container">
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
-              <div className="item">
-                <img src={test} alt="" />
-                <div>
-                  <h3>name</h3>
-                  <h3>200 $</h3>
-                </div>
-                <button>Add to Cart</button>
-              </div>
+              {
+                products.map((product, index) => {
+                  return (
+                    <div key={index} className="item">
+                      <div className="img-container">
+                        <img src={product.picture} alt="" />
+                      </div>
+                      <div>
+                        <h3>{product.name}</h3>
+                        <h3>{product.price} $</h3>
+                      </div>
+                      <button>Add to Cart</button>
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
           <div className="pagination">
