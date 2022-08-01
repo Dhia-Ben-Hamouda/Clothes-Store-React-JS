@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Slider, FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useEffect } from "react";
+import Product from "./Product.jsx";
 
 
 const theme = createTheme({
@@ -26,12 +27,7 @@ const Products = () => {
     async function fetchData() {
       const response = await fetch("https://clothes-store-react-js.herokuapp.com/products/getAllProducts");
       const data = await response.json();
-
-      console.log(data);
-
       setProducts(data);
-
-      console.log(products);
     }
     fetchData();
   }, []);
@@ -142,16 +138,16 @@ const Products = () => {
               {
                 products.map((product, index) => {
                   return (
-                    <div key={index} className="item">
-                      <div className="img-container">
-                        <img src={product.picture} alt="" />
-                      </div>
-                      <div>
-                        <h3>{product.name}</h3>
-                        <h3>{product.price} $</h3>
-                      </div>
-                      <button>Add to Cart</button>
-                    </div>
+                    <Product 
+                      id={product._id}
+                      name={product.name}
+                      price={product.price}
+                      picture={product.picture}
+                      color={product.color}
+                      size={product.size}
+                      gender={product.gender}
+                      product={product}
+                    />
                   )
                 })
               }
