@@ -22,7 +22,7 @@ const Auth = () => {
   async function login(e) {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/auth/signIn", {
+    const response = await fetch("https://clothes-store-react-js.herokuapp.com/auth/signIn", {
       method: "POST",
       headers: {
         "content-type": "application/json"

@@ -24,7 +24,7 @@ const Products = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:5000/products/getAllProducts");
+      const response = await fetch("https://clothes-store-react-js.herokuapp.com/products/getAllProducts");
       const data = await response.json();
 
       console.log(data);
