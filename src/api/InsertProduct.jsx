@@ -22,7 +22,7 @@ const InsertProduct = () => {
   async function submitHandler(e) {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/products/insertProduct", {
+    const response = await fetch("https://clothes-store-react-js.herokuapp.com/products/insertProduct", {
       method: "POST",
       headers: {
         "content-type": "application/json"
