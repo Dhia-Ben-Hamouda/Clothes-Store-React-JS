@@ -139,6 +139,7 @@ const Products = () => {
                 products.map((product, index) => {
                   return (
                     <Product 
+                      key={product._id}
                       id={product._id}
                       name={product.name}
                       price={product.price}

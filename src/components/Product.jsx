@@ -7,7 +7,10 @@ const Product = ({id , picture , name , price , size , gender , color , product}
 
   function add()
   {
-    dispatch(addToCart(product));
+    dispatch(addToCart({
+      ...product,
+      quantity:1
+    }));
   }
 
   return (

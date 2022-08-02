@@ -2,9 +2,12 @@ import React from "react";
 import logo from "../assets/logo.png";
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
+
+  const count = useSelector((state)=>state.cart.quantity);
 
   return (
     <nav>
@@ -28,7 +31,7 @@ const Navbar = () => {
           <a href="/cart">
             <FaShoppingCart className="icon cart" />
             <div className="count">
-              0
+              {count}
             </div>
           </a>
         </div>
