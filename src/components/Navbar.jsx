@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../images/logo.png";
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector } from "react-redux";

@@ -1,11 +1,9 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { FaTrash } from "react-icons/fa";
-import { useSelector , useDispatch} from "react-redux";
-import { increment , decrement } from "../app/actions/cartActions";
+import { useSelector } from "react-redux";
+import CartProduct from "./CartProduct.jsx";
 
 const Cart = () => {
-  const dispatch = useDispatch();
   const products = useSelector(state => state.cart.products);
   const total = useSelector(state => state.cart.total);
 
@@ -18,29 +16,10 @@ const Cart = () => {
             {
               products.map((product) => {
                 return (
-                  <div key={product._id} className="product">
-                    <div className="left">
-                      <img src={product.picture} alt="" />
-                      <h1>{product.name}</h1>
-                    </div>
-                    <div className="right">
-                      <div className="quantity">
-                        <div onClick={()=>{decrement(product)}} className="decrement">
-                          -
-                        </div>
-                        <div className="count">
-                          {
-                            product.quantity
-                          }
-                        </div>
-                        <div onClick={()=>{increment(product)}} className="increment">
-                          +
-                        </div>
-                      </div>
-                      <h1>{product.price * product.quantity} $</h1>
-                      <FaTrash className="icon" />
-                    </div>
-                  </div>
+                  <CartProduct 
+                    key={product._id}
+                    product={product}
+                  />
                 )
               })
             }

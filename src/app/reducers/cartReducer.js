@@ -30,6 +30,13 @@ const reducer = (state = initialState, action) => {
     case actionTypes.REMOVE_FROM_CART:
       return produce(state, (draft) => {
 
+        const payload = action.payload;
+
+        draft.products = draft.products.filter((product) => product._id !== payload._id);
+
+        draft.quantity -= payload.quantity;
+        draft.total -= payload.price * payload.quantity;
+
       })
     case actionTypes.INCREMENT:
       return produce(state, (draft) => {
@@ -45,7 +52,18 @@ const reducer = (state = initialState, action) => {
       })
     case actionTypes.DECREMENT:
       return produce(state, (draft) => {
+        const payload = action.payload;
 
+        const exist = draft.products.find((product)=>product._id === payload._id);
+
+        if(exist.quantity === 1)
+        {
+          return;
+        }
+
+        exist.quantity--;
+        draft.quantity--;
+        draft.total -= payload.price;
       })
     default:
       return state;  

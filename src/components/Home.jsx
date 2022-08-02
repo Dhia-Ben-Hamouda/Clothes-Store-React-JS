@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar.jsx";
-import shirt from "../assets/shirt.png";
-import test from "../assets/test.png";
+import shirt from "../images/shirt.png";
 
 const Home = () => {
   return (
