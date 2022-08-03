@@ -9,6 +9,15 @@ import Product from "./Product.jsx";
 import DesktopFilter from "./DesktopFilter.jsx";
 
 const theme = createTheme({
+  components: {
+    MuiSlider: {
+      styleOverrides: {
+        thumb: {
+          color: "#fff"
+        }
+      }
+    }
+  },
   palette: {
     primary: {
       main: "#FB9D12"
