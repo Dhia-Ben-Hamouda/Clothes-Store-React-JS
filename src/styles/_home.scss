@@ -1,5 +1,9 @@
 #home{
   padding-inline:7.5vw;
+
+  .mobile-search{
+    display: none;
+  }
   
   .wrapper{
     min-height: calc(100vh - 98px);
@@ -51,4 +55,111 @@
       }
     }
   }
+}
+
+
+
+// tablets
+
+@media(min-width:700px) and (max-width:1024px)
+{
+  #home{
+    .wrapper{
+      .inner-wrapper{
+        flex-direction: column;
+
+        .text{
+          width:100%;
+        }
+
+        .illustration{
+          width: 100%;
+
+          img{
+            margin:0 auto;
+            margin-top:5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// mobile devices
+
+@media(min-width:281px) and (max-width:640px)
+{
+  #home{
+    padding-inline:3vw;
+
+    .mobile-search{
+      display: flex;
+      width:95%;
+      margin:0 auto;
+      background: white;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.14);
+      border-radius: 50px;
+      padding:1rem 1.5rem;
+
+        input{
+          border: none;
+          outline:none;
+          margin-left: .75rem;
+        }
+    }
+
+    .wrapper{
+      padding-inline: 1rem;
+      align-items: flex-start;
+
+      .inner-wrapper{
+        flex-direction: column;
+        margin-top:1.5rem;
+
+        .text{
+          width:100%;
+
+          h2{
+            width: 100%;
+            font-size: 17px;
+            margin-bottom: 1.75rem;
+            line-height: 35px;
+          }
+
+          h1{
+            font-size: 25px;
+            width: 80%;
+            margin-bottom: .75rem;
+          }
+
+          a{
+            padding: 1rem 1.25rem;
+            font-size: 12px;
+          }
+        }
+
+        .illustration{
+          width: 100%;
+          margin-top:3rem;
+
+          img{
+            transform: scale(.8) rotate(15deg);
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+// Galaxy fold
+
+@media(max-width:280px)
+{
+
 }

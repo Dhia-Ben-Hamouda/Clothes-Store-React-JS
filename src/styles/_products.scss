@@ -2,6 +2,10 @@
   padding-inline:7.5vw;
   padding-bottom:2rem;
 
+  .mobile-filter{
+    display: none;
+  }
+
   .carousel{
     width:100%;
     background:$primary;
@@ -173,7 +177,87 @@
         }
       }
     }
-
-
   }
+}
+
+
+
+// tablets
+
+@media(min-width:700px) and (max-width:1024px)
+{
+
+}
+
+
+
+// mobile devices
+
+@media(min-width:281px) and (max-width:640px)
+{
+  #products{
+    padding-inline:4vw;
+
+    .pagination{
+      justify-content: flex-start;
+    }
+
+    .mobile-filter{
+      display: flex;
+      justify-content: space-around;
+
+      button{
+        background:$primary;
+        border:none;
+        outline:none;
+        color:white;
+        padding:.5rem 1rem;
+        border-radius: 8px;
+      }
+
+      .filter-search{
+        background:white;
+        border-radius: 50px;
+        width:70%;
+        display: flex;
+        align-items: center;
+        padding:.75rem .75rem;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 5px 0px rgba(0, 0, 0, 0.14);
+
+        input{
+          border: none;
+          outline:none;
+          margin-left:.5rem;
+        }
+      }
+    }
+
+    .carousel{
+      height:200px;
+    }
+
+    .wrapper{
+      .filter-container{
+        display: none;
+      }
+
+      .product-container{
+        grid-template-columns: repeat(1 , 1fr);
+        width: 100%;
+        
+        .item{
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+
+// Galaxy fold
+
+@media(max-width:280px)
+{
+
 }

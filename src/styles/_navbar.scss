@@ -82,3 +82,65 @@ nav {
     }
   }
 }
+
+
+
+// tablets
+
+@media(min-width:700px) and (max-width:1024px)
+{
+
+}
+
+
+
+// mobile devices
+
+@media(min-width:281px) and (max-width:640px)
+{
+  nav{
+    padding-inline: .5rem;
+
+    a{
+
+      img{
+        transform: scale(.8);
+      }
+
+
+      h1{
+        font-size: 14px !important;
+        margin-left: 0px !important;
+      }
+    }
+
+    .container{
+
+      div:not(.search-container){
+
+        a{
+          transform: scale(.8);
+
+          &:first-of-type{
+            transform: translateX(25%) scale(.8);
+          }
+        }
+
+        
+      }
+
+
+      .search-container{
+        display: none;
+      }
+    }
+  }
+}
+
+
+// Galaxy fold
+
+@media(max-width:280px)
+{
+
+}

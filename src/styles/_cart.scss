@@ -42,6 +42,10 @@
           align-items: center;
           justify-content: space-around;
 
+          .mobile-name{
+            display: none;
+          }
+
           h1{
             font-size: 18px;
             color:$secondary;
@@ -115,7 +119,93 @@
           transform: scale(1.08);
         }
       }
-
     }
   }
+}
+
+// tablet 
+
+@media(min-width:700px) and (max-width:1024px)
+{
+
+}
+
+// mobile devices 
+
+@media(min-width:281px) and (max-width:640px)
+{
+  #cart{
+
+    .cart-container{
+      flex-direction: column;
+
+      .products{
+        width:100%;
+        .product{
+          width:100%;
+          position: relative;
+
+          &:last-of-type{
+            margin-bottom: 0px;
+          }
+
+          .left{
+
+            img{
+              width:70%;
+            }
+
+            h1{
+              display: none;
+            }
+          }
+
+          .right{
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            padding-left: .5rem;
+
+            .quantity{
+
+              .count{
+                margin-inline:.75rem;
+              }
+            }
+
+            h1:not(.mobile-name){
+              margin-bottom: .5rem;
+            }
+
+            .mobile-name{
+              display: block;
+              font-size: 14px;
+              margin-bottom: .5rem;
+            }
+
+            .icon{
+              position: absolute;
+              top:10px;
+              right:10px;
+              width:20px;
+              height:20px;
+            }
+          }
+        }
+
+      }
+
+      .checkout{
+        width:100%;
+        
+      }
+    }
+
+  }
+}
+
+// Galaxy Fold 
+
+@media(max-width:280px)
+{
+  
 }

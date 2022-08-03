@@ -7,6 +7,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useEffect } from "react";
 import Product from "./Product.jsx";
 import DesktopFilter from "./DesktopFilter.jsx";
+import { FaSearch } from "react-icons/fa";
 
 const theme = createTheme({
   components: {
@@ -30,10 +31,10 @@ const Products = () => {
   const [pages, setPages] = useState(5);
   const [priceRange, setPriceRange] = useState([0, 500]);
   const [products, setProducts] = useState([]);
-  const [filters , setFilters ] = useState({
-    gender:[],
-    size:[],
-    color:[]
+  const [filters, setFilters] = useState({
+    gender: [],
+    size: [],
+    color: []
   })
 
   useEffect(() => {
@@ -44,12 +45,21 @@ const Products = () => {
       setProducts(data);
     }
     fetchData();
-  }, [page , filters ]);
+  }, [page, filters]);
 
   return (
     <>
       <section id="products">
         <Navbar />
+        <div className="mobile-filter">
+          <button>Filter By</button>
+          <div className="filter-search">
+            <FaSearch color="#777"/>
+            <input
+              placeholder="Search for products"
+            />
+          </div>
+        </div>
         <Carousel />
         <ThemeProvider theme={theme}>
           <div className="wrapper">
@@ -63,7 +73,7 @@ const Products = () => {
               {
                 products.map((product, index) => {
                   return (
-                    <Product 
+                    <Product
                       key={product._id}
                       id={product._id}
                       name={product.name}
