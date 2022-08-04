@@ -1,18 +1,11 @@
 import React from "react";
 import Navbar from "./Navbar.jsx";
 import shirt from "../images/shirt.png";
-import { FaSearch } from "react-icons/fa";
 
 const Home = () => {
   return (
     <section id="home">
       <Navbar />
-      <div className="mobile-search">
-        <FaSearch color="#777"/>
-        <input
-          placeholder="Search for products"
-        />
-      </div>
       <div className="wrapper">
         <div className="inner-wrapper">
           <div className="text">
