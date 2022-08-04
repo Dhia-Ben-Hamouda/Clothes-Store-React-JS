@@ -28,7 +28,7 @@ const theme = createTheme({
 
 const Products = () => {
   const [page, setPage] = useState(1);
-  const [pages, setPages] = useState(5);
+  const [pages, setPages] = useState(1);
   const [priceRange, setPriceRange] = useState([0, 500]);
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({
