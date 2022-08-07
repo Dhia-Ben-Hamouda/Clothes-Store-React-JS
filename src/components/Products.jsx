@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Product from "./Product.jsx";
 import DesktopFilter from "./DesktopFilter.jsx";
 import { FaSearch } from "react-icons/fa";
+import { Skeleton } from "@mui/material";
 
 const theme = createTheme({
   components: {
@@ -27,6 +28,7 @@ const theme = createTheme({
 })
 
 const Products = () => {
+  const [loading , setLoading ] = useState(true);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [priceRange, setPriceRange] = useState([0, 500]);
@@ -37,10 +39,28 @@ const Products = () => {
     color: []
   })
 
+  let skeletons = (
+    <>
+      <Skeleton variant="rectangular" height={350}/>
+      <Skeleton variant="rectangular" height={350}/>
+      <Skeleton variant="rectangular" height={350}/>
+      <Skeleton variant="rectangular" height={350}/>
+      <Skeleton variant="rectangular" height={350}/>
+      <Skeleton variant="rectangular" height={350}/>
+      <Skeleton variant="rectangular" height={350}/>
+      <Skeleton variant="rectangular" height={350}/>
+      <Skeleton variant="rectangular" height={350}/>
+    </>
+  )
+
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`https://clothes-store-react-js.herokuapp.com/products/getAllProducts?page=${page}?&filters=${JSON.stringify(filters)}`);
+      const response = await fetch(`http://localhost:5000/products/getAllProducts?page=${page}&filters=${JSON.stringify(filters)}`);
       const data = await response.json();
+
+      await new Promise(r => setTimeout(r, 3000));
+      
+      setLoading(false);
 
       setProducts(data);
     }
@@ -71,7 +91,7 @@ const Products = () => {
             />
             <div className="product-container">
               {
-                products.map((product, index) => {
+                loading ? skeletons : products.map((product, index) => {
                   return (
                     <Product
                       key={product._id}
