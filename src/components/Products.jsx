@@ -32,6 +32,7 @@ const Products = () => {
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [priceRange, setPriceRange] = useState([0, 500]);
+  const [realPrice , setRealPrice] = useState([0 , 500]); 
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({
     gender: [],
@@ -55,17 +56,28 @@ const Products = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`http://localhost:5000/products/getAllProducts?page=${page}&filters=${JSON.stringify(filters)}`);
+      setLoading(true);
+
+      const response = await fetch(`https://clothes-store-react-js.herokuapp.com/products/getAllProducts?page=${page}&filters=${JSON.stringify(filters)}&price=${JSON.stringify(realPrice)}`);
       const data = await response.json();
 
       await new Promise(r => setTimeout(r, 3000));
       
       setLoading(false);
 
-      setProducts(data);
+      setProducts(data.products);
+
+      if(data.products.length < 9  && page === 1)
+      {
+        setPages(1);
+      }
+      else
+      {
+        setPages(data.pages);
+      }
     }
     fetchData();
-  }, [page, filters]);
+  }, [page, filters , realPrice]);
 
   return (
     <>
@@ -88,6 +100,8 @@ const Products = () => {
               setFilters={setFilters}
               priceRange={priceRange}
               setPriceRange={setPriceRange}
+              realPrice={realPrice}
+              setRealPrice={setRealPrice}
             />
             <div className="product-container">
               {

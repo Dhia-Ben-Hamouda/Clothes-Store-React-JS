@@ -1,7 +1,7 @@
 import React from "react";
 import { Slider, FormGroup, FormControlLabel, Checkbox } from "@mui/material";
 
-const DesktopFilter = ({filters , setFilters , priceRange , setPriceRange}) => {
+const DesktopFilter = ({filters , setFilters , priceRange , setPriceRange , realPrice , setRealPrice}) => {
 
   function handleFilter(e)
   {
@@ -41,7 +41,8 @@ const DesktopFilter = ({filters , setFilters , priceRange , setPriceRange}) => {
               min={0}
               max={500}
               step={20}
-              onChange={(e, newValue) => { setPriceRange(newValue); console.log(newValue) }}
+              onChange={(e, newValue) => { setPriceRange(newValue); }}
+              onChangeCommitted={(e)=>{setRealPrice(priceRange); }}
             />
 
           </div>
