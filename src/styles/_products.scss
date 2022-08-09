@@ -1,5 +1,8 @@
+.opened{
+  width:45% !important;
+}
+
 #products{
-  padding-inline:7.5vw;
   padding-bottom:2rem;
 
   .mobile-filter{
@@ -8,10 +11,10 @@
 
   .carousel{
     width:100%;
-    background:$primary;
     height:400px;
     margin-top:1rem;
     position: relative;
+    padding-inline: 7.5vw;
 
     img{
       width:100%;
@@ -24,6 +27,7 @@
     margin-top:1rem;
     display: flex;
     justify-content: flex-end;
+    padding-inline: 7.5vw;
 
     button{
       display: flex;
@@ -55,6 +59,7 @@
     margin-top:1rem;
     display: flex;
     gap:1rem;
+    padding-inline: 7.5vw;
     
 
     .filter-container{
@@ -198,10 +203,33 @@
 @media(min-width:281px) and (max-width:640px)
 {
   #products{
-    padding-inline:4vw;
+
+    nav{
+      padding:1rem 4vw;
+    }
+
+    .filter{
+      background:white;
+      height:calc(100vh - 90px);
+      width: 0%;
+      position: fixed;
+      left: 0px;
+      z-index: 50000;
+      box-shadow: 2px 0px 8px 0px rgba(0,0,0 , 0.2);
+      overflow: hidden;
+      transition: .5s;
+
+      .header{
+        background:$primary;
+        display: flex;
+        justify-content: flex-end;
+        padding: .5rem;
+      }
+    }
 
     .pagination{
       justify-content: flex-start;
+      padding-inline: 4vw;
 
       button{
         &:hover{
@@ -213,6 +241,8 @@
     .mobile-filter{
       display: flex;
       justify-content: space-around;
+      padding-inline: 4vw;
+      margin-top: .75rem;
 
       button{
         background:$primary;
@@ -246,9 +276,11 @@
 
     .carousel{
       height:150px;
+      padding-inline: 4vw;
     }
 
     .wrapper{
+      padding-inline: 4vw;
       .filter-container{
         display: none;
       }
@@ -259,6 +291,12 @@
         
         .item{
           width: 100% !important;
+
+          button{
+            &:hover{
+              transform: scale(1);
+            }
+          }
         }
       }
     }

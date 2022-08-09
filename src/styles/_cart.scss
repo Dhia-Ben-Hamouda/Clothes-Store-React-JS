@@ -1,5 +1,4 @@
 #cart{
-  padding-inline:7.5vw;
 
   .cart-container{
     margin-top: 1rem;
@@ -136,8 +135,13 @@
 {
   #cart{
 
+    nav{
+      padding:1rem 4vw;
+    }
+
     .cart-container{
       flex-direction: column;
+      padding-inline: 4vw;
 
       .products{
         width:100%;
@@ -197,6 +201,7 @@
 
       .checkout{
         width:100%;
+        
         
       }
     }

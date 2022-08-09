@@ -1,7 +1,11 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 0px;
+  padding: 1.5rem 7.5vw;
+  position: sticky;
+  top:0px;
+  background:#f4f4f4;
+  z-index: 5000;
 
   .logo {
     display: flex;

@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar.jsx";
 import Carousel from "./Carousel.jsx";
 import Pagination from "./Pagination.jsx";
+import MobileFilter from "./MobileFilter.jsx";
 import { useState } from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useEffect } from "react";
@@ -79,12 +80,18 @@ const Products = () => {
     fetchData();
   }, [page, filters , realPrice]);
 
+  function clickHandler()
+  {
+    document.querySelector(".filter").classList.toggle("opened");
+  }
+
   return (
     <>
       <section id="products">
         <Navbar />
+        <MobileFilter/>
         <div className="mobile-filter">
-          <button>Filter By</button>
+          <button onClick={clickHandler}>Filter By</button>
           <div className="filter-search">
             <FaSearch color="#777"/>
             <input

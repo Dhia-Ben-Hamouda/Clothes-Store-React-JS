@@ -1,11 +1,11 @@
 #home{
-  padding-inline:7.5vw;
   
   .wrapper{
     min-height: calc(100vh - 120px);
     display: flex;
     align-items: center;
     position: relative;
+    padding-inline:7.5vw;
 
     .inner-wrapper{
       display: flex;
@@ -91,15 +91,19 @@
 @media(min-width:281px) and (max-width:640px)
 {
   #home{
-    padding-inline:3vw;
+
+    nav{
+      padding:1rem 4vw;
+    }
 
     .wrapper{
-      padding-inline: 1rem;
+      padding-inline: 4vw;
       align-items: flex-start;
 
       .inner-wrapper{
         flex-direction: column;
         margin-top:1.5rem;
+        padding-inline: .75rem;
 
         .text{
           width:100%;
