@@ -62,7 +62,7 @@ const Products = () => {
       const response = await fetch(`https://clothes-store-react-js.herokuapp.com/products/getAllProducts?page=${page}&filters=${JSON.stringify(filters)}&price=${JSON.stringify(realPrice)}`);
       const data = await response.json();
 
-      await new Promise(r => setTimeout(r, 3000));
+      await new Promise((r)=>setTimeout(r,500));
       
       setLoading(false);
 
