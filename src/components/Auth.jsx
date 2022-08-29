@@ -28,7 +28,8 @@ const Auth = () => {
         "content-type": "application/json"
       },
       body: JSON.stringify({
-
+        email,
+        password
       })
     })
     const data = await response.json();
@@ -39,13 +40,16 @@ const Auth = () => {
   async function signUp(e) {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/auth/signUp", {
+    const response = await fetch("https://clothes-store-react-js.herokuapp.com/auth/signUp", {
       method: "POST",
       headers: {
         "content-type": "application/json"
       },
       body: JSON.stringify({
-
+        name,
+        phone,
+        email,
+        password
       })
     })
 
@@ -54,20 +58,12 @@ const Auth = () => {
     console.log(data);
   }
 
-  function submitHandler() {
-    if (signIn) {
-      login();
-    }
-    else {
-      signUp();
-    }
-  }
 
   return (
     <>
       <section id="auth">
         <ThemeProvider theme={theme}>
-          <form autoComplete="off" onSubmit={submitHandler}>
+          <form autoComplete="off" onSubmit={signIn ? login : signUp}>
             {
               !signIn && <>
                 <TextField
