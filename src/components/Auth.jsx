@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { TextField , FormControlLabel , checkbox } from "@mui/material";
+import { TextField, FormControlLabel, checkbox } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
+import { Alert, Snackbar } from "@mui/material";
 
 const theme = createTheme({
   palette: {
@@ -18,6 +19,10 @@ const Auth = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error1, setError1] = useState(false);
+  const [error2, setError2] = useState(false);
+  const [error3, setError3] = useState(false);
+  const [success , setSuccess] = useState(false);
 
   async function login(e) {
     e.preventDefault();
@@ -34,7 +39,20 @@ const Auth = () => {
     })
     const data = await response.json();
 
-    console.log(data);
+    switch (data.msg) {
+      case "User with the given email doesn't exist":
+        setError3(true);
+        break;
+      case "Wrong password":
+        setError2(true);
+        break;
+      case "Success":
+
+        window.location.href = "/";
+        break;
+      default:
+        break;
+    }
   }
 
   async function signUp(e) {
@@ -55,9 +73,26 @@ const Auth = () => {
 
     const data = await response.json();
 
-    console.log(data);
+    switch (data.msg) {
+      case "User with the given email already exists":
+        setError1(true);
+        break;
+      case "User created successfully":
+        setSuccess(true);
+        break;
+      default:
+        break;
+    }
   }
 
+
+  function handleClose()
+  {
+    setError1(false);
+    setError2(false);
+    setError3(false);
+    setSuccess(false);
+  }
 
   return (
     <>
@@ -110,22 +145,50 @@ const Auth = () => {
                 </h3>
                 <h4>or Sign in with</h4>
                 <div className="icons">
-              <div className="icon" style={{background:"#405498"}}>
-                <FaFacebookF />
-              </div>
-              <div className="icon" style={{background:"#359BF1"}}>
-                <FaTwitter />
-              </div>
-              <div className="icon" style={{background:"#E74639"}}>
-                <FaGoogle />
-              </div>
-            </div>
+                  <div className="icon" style={{ background: "#405498" }}>
+                    <FaFacebookF />
+                  </div>
+                  <div className="icon" style={{ background: "#359BF1" }}>
+                    <FaTwitter />
+                  </div>
+                  <div className="icon" style={{ background: "#E74639" }}>
+                    <FaGoogle />
+                  </div>
+                </div>
               </>
                 : <h3>Already have an account <span onClick={() => { setSignIn(!signIn) }}>Sign in</span></h3>
             }
-            
+
           </form>
         </ThemeProvider>
+        {
+          error1 && <Snackbar open={error1} autoHideDuration={4000} onClose={handleClose}>
+            <Alert onClose={handleClose} variant="filled" severity="error">
+              User with the same email already exist !
+            </Alert>
+          </Snackbar>
+        }
+        {
+          error2 && <Snackbar open={error2} autoHideDuration={4000} onClose={handleClose}>
+            <Alert onClose={handleClose} variant="filled" severity="error">
+              Wrong password !
+            </Alert>
+          </Snackbar>
+        }
+        {
+          error3 && <Snackbar open={error3} autoHideDuration={4000} onClose={handleClose}>
+            <Alert onClose={handleClose} variant="filled" severity="error">
+              User with the given email doesn't exist !
+            </Alert>
+          </Snackbar>
+        }
+        {
+          success && <Snackbar open={success} autoHideDuration={4000} onClose={handleClose}>
+            <Alert onClose={handleClose} variant="filled" severity="success">
+              User created successfully !
+            </Alert>
+          </Snackbar>
+        }
       </section>
     </>
   )
