@@ -4,6 +4,7 @@ import { TextField, FormControlLabel, checkbox } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 import { Alert, Snackbar } from "@mui/material";
+import url from "../api/baseURL.js";
 
 const theme = createTheme({
   palette: {
@@ -27,7 +28,7 @@ const Auth = () => {
   async function login(e) {
     e.preventDefault();
 
-    const response = await fetch("https://clothes-store-react-js.herokuapp.com/auth/signIn", {
+    const response = await fetch(`${url}/auth/signIn`, {
       method: "POST",
       headers: {
         "content-type": "application/json"

@@ -10,6 +10,7 @@ import Product from "./Product.jsx";
 import DesktopFilter from "./DesktopFilter.jsx";
 import { FaSearch } from "react-icons/fa";
 import { Skeleton } from "@mui/material";
+import url from "../api/baseURL.js";
 
 const theme = createTheme({
   components: {
@@ -59,10 +60,10 @@ const Products = () => {
     async function fetchData() {
       setLoading(true);
 
-      const response = await fetch(`https://clothes-store-react-js.herokuapp.com/products/getAllProducts?page=${page}&filters=${JSON.stringify(filters)}&price=${JSON.stringify(realPrice)}`);
+      const response = await fetch(`${url}/products/getAllProducts?page=${page}&filters=${JSON.stringify(filters)}&price=${JSON.stringify(realPrice)}`);
       const data = await response.json();
 
-      await new Promise((r)=>setTimeout(r,500));
+      await new Promise((r)=>setTimeout(r,250));
       
       setLoading(false);
 
